@@ -84,8 +84,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Creepy_Cat\3D Games Effects Pack Free\Example_02\InstanceExample.cs" />
     <Compile Include="Assets\Easy Screen Align\Scripts\alignElement.cs" />
     <Compile Include="Assets\Easy Screen Align\Scripts\detectResize.cs" />
+    <Compile Include="Assets\Fx Explosion Pack\Script\csLightControl.cs" />
+    <Compile Include="Assets\Fx Explosion Pack\Script\DestroyEffect.cs" />
     <Compile Include="Assets\HolyShift\Scripts\CheckForStandardAssets.cs" />
     <Compile Include="Assets\NuclearBomb\Scripts\Blast.cs" />
     <Compile Include="Assets\NuclearBomb\Scripts\Nuke.cs" />
