@@ -130,11 +130,13 @@
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Scripts\Arm.cs" />
     <Compile Include="Assets\Scripts\CanvasFaceCamera.cs" />
+    <Compile Include="Assets\Scripts\CityLife.cs" />
     <Compile Include="Assets\Scripts\CitySilo.cs" />
     <Compile Include="Assets\Scripts\Foot.cs" />
     <Compile Include="Assets\Scripts\GameManagerAndTimer.cs" />
     <Compile Include="Assets\Scripts\RocketBehavior.cs" />
     <Compile Include="Assets\Scripts\RocketFlight.cs" />
+    <Compile Include="Assets\Scripts\ScoreFetcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Easy Screen Align\README.txt" />
