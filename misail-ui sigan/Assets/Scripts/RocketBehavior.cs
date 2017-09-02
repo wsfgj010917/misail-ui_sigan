@@ -31,7 +31,7 @@ public class RocketBehavior : MonoBehaviour {
 
             if (hpLeft <= 0)
             {
-                Explode(false);
+                Explode(true);
             }
         }
         else
@@ -44,6 +44,10 @@ public class RocketBehavior : MonoBehaviour {
 
     void Explode(bool inAir)
     {
+        if (inAir)
+        {
+            managertimer.Success();
+        }
         Destroy(gameObject);
     }
 
@@ -52,6 +56,7 @@ public class RocketBehavior : MonoBehaviour {
         if (letMeStart < 0)
         {
             managertimer.explosionAnim.SetTrigger("Explode");
+            other.gameObject.GetComponent<CityLife>().GotHit();
             Explode(false);
         }
     }
