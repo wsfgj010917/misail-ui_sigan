@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "misail-ui sigan", "misail-ui sigan.csproj", "{CF38FB3D-7911-FBA0-6F67-483D727DF141}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "misail-ui sigan.Editor", "misail-ui sigan.Editor.csproj", "{A2FA0A4E-BB5E-2B49-8DD7-58BC251ED754}"
