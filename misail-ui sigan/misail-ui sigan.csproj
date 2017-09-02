@@ -76,12 +76,6 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
@@ -132,6 +126,8 @@
     <Compile Include="Assets\Scripts\Arm.cs" />
     <Compile Include="Assets\Scripts\CitySilo.cs" />
     <Compile Include="Assets\Scripts\Foot.cs" />
+    <Compile Include="Assets\Scripts\GameManagerAndTimer.cs" />
+    <Compile Include="Assets\Scripts\RocketBehavior.cs" />
     <Compile Include="Assets\Scripts\RocketFlight.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,27 +4,23 @@ using UnityEngine;
 
 public class CitySilo : MonoBehaviour {
 
-    public Transform targets;
+    public Transform[] targets;
     public Foot foot;
     public Transform arm;
     public GameObject rocket;
-    public float delay;
-    float timer;
-
-    void Start()
-    {
-        timer = delay;
-    }
-
+    int i;
+    
     void Update ()
     {
-        timer -= Time.deltaTime;
-
-        if (timer <= 0)
-        {
-            timer = delay;
-            GameObject r = Instantiate(rocket, arm.position, arm.rotation) as GameObject;
-            r.GetComponent<RocketFlight>().target = targets;
-        }
+        i = Random.Range(0, targets.Length);
+        foot.target = targets[i];        
 	}
+
+    public void LaunchRocket(int setHRS, int setMNS)
+    {
+        GameObject r = Instantiate(rocket, arm.position, arm.rotation) as GameObject;
+        r.GetComponent<RocketFlight>().target = targets[i];
+        r.GetComponent<RocketBehavior>().hour = setHRS;
+        r.GetComponent<RocketBehavior>().minute = setMNS;
+    }
 }
