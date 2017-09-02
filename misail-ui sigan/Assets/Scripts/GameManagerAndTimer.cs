@@ -1,11 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManagerAndTimer : MonoBehaviour {
 
     public int globalHour;
     public int globalMinute;
+    public Text timer;
+
+    int dirHRS;
+    int spdHRS;
+    int dirMNS;
+    int spdMNS;
+
+    float hrsClock;
+    float hrsClockFast;
+    float mnsClock;
+    float mnsClockFast;
+
     public CitySilo[] silos;
 
     public int[] latestHRS;
@@ -46,6 +59,14 @@ public class GameManagerAndTimer : MonoBehaviour {
         {
             latestMNS[i] = Random.Range(0, 12) * 5;
         }
+
+        dirHRS = 1;
+        dirMNS = 1;
+
+        hrsClock = 1f;
+        hrsClockFast = 0.2f;
+        mnsClock = 0.5f;
+        mnsClockFast = 0.1f;
     }
 
     
@@ -66,7 +87,99 @@ public class GameManagerAndTimer : MonoBehaviour {
                 LevelUp();
             }
         }
+
+        GatherInput();
+        UpdateHourAndMinute();
+
+        timer.text = globalHour + ":" + globalMinute;
 	}
+
+    void GatherInput()
+    {
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            dirHRS = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            dirHRS = -1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            dirMNS = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            dirMNS = -1;
+        }
+
+        spdHRS = 1;
+        spdMNS = 1;
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+        {
+            spdHRS++;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            spdHRS--;
+        }
+
+        if (Input.GetKey(KeyCode.I) || Input.GetKey(KeyCode.K))
+        {
+            spdMNS++;
+        }
+        if (Input.GetKey(KeyCode.L))
+        {
+            spdMNS--;
+        }
+    }
+
+    void UpdateHourAndMinute()
+    {
+        switch (spdHRS)
+        {
+            case 0: break;
+            case 1: hrsClock -= Time.deltaTime; break;
+            case 2: hrsClockFast -= Time.deltaTime; break;
+        }
+        switch (spdMNS)
+        {
+            case 0: break;
+            case 1: mnsClock -= Time.deltaTime; break;
+            case 2: mnsClockFast -= Time.deltaTime; break;
+        }
+
+        if (hrsClock <= 0)
+        {
+            hrsClock = 1f;
+            globalHour += dirHRS;
+        }
+        if (hrsClockFast <= 0)
+        {
+            hrsClockFast = 0.2f;
+            globalHour += dirHRS;
+        }
+
+        if (mnsClock <= 0)
+        {
+            mnsClock = 0.5f;
+            globalMinute += dirMNS * 5;
+        }
+        if (mnsClockFast <= 0)
+        {
+            mnsClockFast = 0.1f;
+            globalMinute += dirMNS * 5;
+        }
+
+        if (globalHour >= 12) { globalHour = 0; }
+        if (globalHour <= -1) { globalHour = 11; }
+
+        if (globalMinute >= 60) { globalMinute = 0; }
+        if (globalMinute <= -1) { globalMinute = 55; }
+
+    }
 
     void ArmAndShoot()
     {
