@@ -20,6 +20,7 @@ public class GameManagerAndTimer : MonoBehaviour {
     float mnsClockFast;
 
     public CitySilo[] silos;
+    public CityLife[] lives;
 
     public int[] latestHRS;
     public int[] latestMNS;
@@ -35,6 +36,17 @@ public class GameManagerAndTimer : MonoBehaviour {
     public float delayDecrease;
 
     public Animator explosionAnim;
+    public int poitsPerHit;
+    int score;
+    int combo;
+    int scoremultiplier;
+    public Text scoreText;
+    public Text comboText;
+    public Text multiplierText;
+
+    bool gameOver;
+    public GameObject inGameStuff;
+    public GameObject gameOverStuff;
 
     public static GameManagerAndTimer instance = null;
 
@@ -67,32 +79,85 @@ public class GameManagerAndTimer : MonoBehaviour {
         hrsClockFast = 0.2f;
         mnsClock = 0.5f;
         mnsClockFast = 0.1f;
+
+        score = 0;
+        combo = 0;
+        scoremultiplier = 1;
+
+        gameOver = false;
     }
 
     
     void Update ()
     {
-        delay -= Time.deltaTime;
-
-        if (delay <= 0)
+        if (!gameOver)
         {
-            delay = Random.Range(minDelay, maxDelay);
+            delay -= Time.deltaTime;
 
-            ArmAndShoot();
-
-            levelUpCounter--;
-
-            if (levelUpCounter < 0)
+            if (delay <= 0)
             {
-                LevelUp();
+                delay = Random.Range(minDelay, maxDelay);
+
+                ArmAndShoot();
+
+                levelUpCounter--;
+
+                if (levelUpCounter < 0)
+                {
+                    LevelUp();
+                }
             }
+
+            GatherInput();
+            UpdateHourAndMinute();
+
+            timer.text = globalHour + ":" + globalMinute;
+
+            UpdateScore();
+        }
+        if (gameOver)
+        {
+            inGameStuff.SetActive(false);
+            gameOverStuff.SetActive(true);
+        }
+	}
+
+    void UpdateScore()
+    {
+        scoreText.text = "Score: " + score;
+        comboText.text = "Combo: " + combo;
+        multiplierText.text = "x" + scoremultiplier;
+    }
+
+    public void Success()
+    {
+        combo += poitsPerHit;
+        scoremultiplier++;
+    }
+
+    public void ComboBreak()
+    {
+        score += combo * scoremultiplier;
+        combo = 0;
+        scoremultiplier = 1;
+
+        CheckLives();
+    }
+
+    void CheckLives()
+    {
+        for (int i = 0; i < lives.Length; i++)
+        {
+            if (!lives[i].isDead) return;
         }
 
-        GatherInput();
-        UpdateHourAndMinute();
+        gameOver = true;
+    }
 
-        timer.text = globalHour + ":" + globalMinute;
-	}
+    public int GetFinalScore()
+    {
+        return score;
+    }
 
     void GatherInput()
     {

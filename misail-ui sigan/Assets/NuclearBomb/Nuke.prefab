@@ -399,8 +399,13 @@ MonoBehaviour:
   - {fileID: 160394}
   crater: {fileID: 122280}
   m_light: {fileID: 10871912}
+<<<<<<< HEAD
   detonateByE: 1
   time: 3
+=======
+  detonateByE: 0
+  time: 7.1
+>>>>>>> 5f5998f5e2046bfccda75b77a8abb05306f4aa78
 --- !u!114 &11441814
 MonoBehaviour:
   m_ObjectHideFlags: 1

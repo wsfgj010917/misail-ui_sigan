@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RocketBehavior : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class RocketBehavior : MonoBehaviour {
     public int hour;
     public int minute;
     public float letMeStart;
+    public Text clock;
 
     GameManagerAndTimer managertimer;
 
@@ -17,6 +19,8 @@ public class RocketBehavior : MonoBehaviour {
         managertimer = GameManagerAndTimer.instance;
 
         hpLeft = hp;
+
+        clock.text = hour + ":" + minute;
     }
     
 	void Update ()
@@ -27,7 +31,7 @@ public class RocketBehavior : MonoBehaviour {
 
             if (hpLeft <= 0)
             {
-                Explode(false);
+                Explode(true);
             }
         }
         else
@@ -40,6 +44,10 @@ public class RocketBehavior : MonoBehaviour {
 
     void Explode(bool inAir)
     {
+        if (inAir)
+        {
+            managertimer.Success();
+        }
         Destroy(gameObject);
     }
 
@@ -48,6 +56,7 @@ public class RocketBehavior : MonoBehaviour {
         if (letMeStart < 0)
         {
             managertimer.explosionAnim.SetTrigger("Explode");
+            other.gameObject.GetComponent<CityLife>().GotHit();
             Explode(false);
         }
     }
