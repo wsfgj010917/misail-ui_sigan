@@ -1306,13 +1306,13 @@ MonoBehaviour:
   - {fileID: 903146189}
   latestHRS: 000000000000000000000000
   latestMNS: 000000000000000000000000
-  minDelay: 3
-  minDelayABS: 1
-  maxDelay: 5
-  maxDelayABS: 2
+  minDelay: 5
+  minDelayABS: 2
+  maxDelay: 10
+  maxDelayABS: 4
   levelUpAfter: 3
   levelUpMultiplier: 1
-  delayDecrease: 0.15
+  delayDecrease: 0.05
   explosionAnim: {fileID: 177806944}
 --- !u!4 &1484026339
 Transform:
@@ -1366,6 +1366,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 114773854691511768, guid: 22799950c78072e49940a3067189689e,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 643944878}
+    - target: {fileID: 223214759728098774, guid: 22799950c78072e49940a3067189689e,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 643944877}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22799950c78072e49940a3067189689e, type: 2}
   m_IsPrefabParent: 0

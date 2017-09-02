@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RocketBehavior : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class RocketBehavior : MonoBehaviour {
     public int hour;
     public int minute;
     public float letMeStart;
+    public Text clock;
 
     GameManagerAndTimer managertimer;
 
@@ -17,6 +19,8 @@ public class RocketBehavior : MonoBehaviour {
         managertimer = GameManagerAndTimer.instance;
 
         hpLeft = hp;
+
+        clock.text = hour + ":" + minute;
     }
     
 	void Update ()

@@ -129,6 +129,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Scripts\Arm.cs" />
+    <Compile Include="Assets\Scripts\CanvasFaceCamera.cs" />
     <Compile Include="Assets\Scripts\CitySilo.cs" />
     <Compile Include="Assets\Scripts\Foot.cs" />
     <Compile Include="Assets\Scripts\GameManagerAndTimer.cs" />
