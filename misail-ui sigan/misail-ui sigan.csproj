@@ -76,8 +76,19 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Easy Screen Align\Scripts\alignElement.cs" />
+    <Compile Include="Assets\Easy Screen Align\Scripts\detectResize.cs" />
+    <Compile Include="Assets\HolyShift\Scripts\CheckForStandardAssets.cs" />
+    <Compile Include="Assets\NuclearBomb\Scripts\Blast.cs" />
+    <Compile Include="Assets\NuclearBomb\Scripts\Nuke.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
@@ -131,6 +142,11 @@
     <Compile Include="Assets\Scripts\RocketFlight.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Easy Screen Align\README.txt" />
+    <None Include="Assets\HolyShift\Shaders\FXWaterLowpoly.shader" />
+    <None Include="Assets\HolyShift\Shaders\WaterInclude.cginc" />
+    <None Include="Assets\HolyShift\readme.txt" />
+    <None Include="Assets\NuclearBomb\Scripts\Shaders\UnlitAlphaColor.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
