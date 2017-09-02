@@ -1,5 +1,6 @@
 Base path: C:/Program Files/Unity/Editor/Data
 Cmd: initializeCompiler
+<<<<<<< HEAD
 Cmd: preprocess
   insize=15185 outsize=3153 ok=1
 Cmd: compileSnippet
@@ -16,3 +17,5 @@ Cmd: compileSnippet
   api=4 type=1 insize=11777 outsize=1634 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME ok=1
 Cmd: preprocess
   insize=1044 outsize=1041 ok=1
+=======
+>>>>>>> 58e851f71022e0a6ebbd244401077b9e5bacbe08
