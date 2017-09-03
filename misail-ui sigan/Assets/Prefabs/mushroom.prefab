@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 198061921413788122}
   - component: {fileID: 199968152309783740}
   - component: {fileID: 123415887514273642}
+  - component: {fileID: 114407180155629454}
   m_Layer: 0
   m_Name: mushroom
   m_TagString: Untagged
@@ -185,6 +186,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114407180155629454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855414669053174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5823b1675ae3484f9bb09a861426a8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deadTime: 5
 --- !u!123 &123415887514273642
 LensFlare:
   m_ObjectHideFlags: 1
