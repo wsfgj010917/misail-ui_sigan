@@ -10,6 +10,6 @@ public class ScoreFetcher : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = "Final Score: " + GameManagerAndTimer.instance.GetFinalScore();
+        scoreText.text = "최종 점수 : " + GameManagerAndTimer.instance.GetFinalScore();
     }
 }

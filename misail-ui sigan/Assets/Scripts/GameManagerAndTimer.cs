@@ -8,6 +8,8 @@ public class GameManagerAndTimer : MonoBehaviour {
     public int globalHour;
     public int globalMinute;
     public Text timer;
+    public Image[] hrspdimages;
+    public Image[] mnspdimages;
 
     int dirHRS;
     int spdHRS;
@@ -41,7 +43,6 @@ public class GameManagerAndTimer : MonoBehaviour {
     int combo;
     int scoremultiplier;
     public Text scoreText;
-    public Text comboText;
     public Text multiplierText;
 
     bool gameOver;
@@ -124,8 +125,7 @@ public class GameManagerAndTimer : MonoBehaviour {
 
     void UpdateScore()
     {
-        scoreText.text = "Score: " + score;
-        comboText.text = "Combo: " + combo;
+        scoreText.text = "Score: " + (score + combo);
         multiplierText.text = "x" + scoremultiplier;
     }
 
@@ -203,6 +203,24 @@ public class GameManagerAndTimer : MonoBehaviour {
 
     void UpdateHourAndMinute()
     {
+        for (int x = 0; x < hrspdimages.Length; x++)
+        {
+            hrspdimages[x].enabled = false;
+        }
+        for (int x = 0; x < mnspdimages.Length; x++)
+        {
+            mnspdimages[x].enabled = false;
+        }
+
+        int offsetHRS = 0;
+        int offsetMNS = 0;
+
+        if (dirHRS == -1 && spdHRS != 0) offsetHRS = 2;
+        if (dirMNS == -1 && spdMNS != 0) offsetMNS = 2;
+
+        hrspdimages[spdHRS + offsetHRS].enabled = true;
+        mnspdimages[spdMNS + offsetMNS].enabled = true;
+
         switch (spdHRS)
         {
             case 0: break;

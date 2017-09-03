@@ -12,6 +12,9 @@ public class RocketBehavior : MonoBehaviour {
     public float letMeStart;
     public Text clock;
 
+    public GameObject nuke;
+    public GameObject inAirExplosion;
+
     GameManagerAndTimer managertimer;
 
     void Start()
@@ -47,6 +50,7 @@ public class RocketBehavior : MonoBehaviour {
         if (inAir)
         {
             managertimer.Success();
+            Instantiate(inAirExplosion, transform.position, transform.rotation);
         }
         Destroy(gameObject);
     }
@@ -57,6 +61,10 @@ public class RocketBehavior : MonoBehaviour {
         {
             managertimer.explosionAnim.SetTrigger("Explode");
             other.gameObject.GetComponent<CityLife>().GotHit();
+
+            GameObject n = Instantiate(nuke, other.transform.position, nuke.transform.rotation) as GameObject;
+            n.GetComponent<Nuke>().Detonate();
+            
             Explode(false);
         }
     }

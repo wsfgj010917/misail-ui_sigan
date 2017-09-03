@@ -478,7 +478,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d46e247a373da74418a5129610c42d33, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -523,6 +523,9 @@ MonoBehaviour:
   minute: 0
   letMeStart: 2
   clock: {fileID: 114864789338970392}
+  nuke: {fileID: 1621806796051308, guid: f0f21b5f85ed2a94aab6bf3de8ff343c, type: 2}
+  inAirExplosion: {fileID: 1855414669053174, guid: 52cbc667d7e7a794eacc83ddb73ed5d7,
+    type: 2}
 --- !u!136 &136194643868307048
 CapsuleCollider:
   m_ObjectHideFlags: 1
