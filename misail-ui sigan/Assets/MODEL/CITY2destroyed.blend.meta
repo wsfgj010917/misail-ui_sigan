@@ -80,6 +80,8 @@ ModelImporter:
     100144: Sphere_060
     100146: Sphere_061
     100148: Sphere_062
+    100150: Circle_000
+    100152: Circle_001
     400000: Circle
     400002: Circle_002
     400004: Circle_003
@@ -155,6 +157,8 @@ ModelImporter:
     400144: Sphere_060
     400146: Sphere_061
     400148: Sphere_062
+    400150: Circle_000
+    400152: Circle_001
     2300000: Circle
     2300002: Circle_002
     2300004: Circle_003
@@ -229,6 +233,8 @@ ModelImporter:
     2300142: Sphere_060
     2300144: Sphere_061
     2300146: Sphere_062
+    2300148: Circle_000
+    2300150: Circle_001
     3300000: Circle
     3300002: Circle_002
     3300004: Circle_003
@@ -303,6 +309,8 @@ ModelImporter:
     3300142: Sphere_060
     3300144: Sphere_061
     3300146: Sphere_062
+    3300148: Circle_000
+    3300150: Circle_001
     4300000: Circle_032
     4300002: Circle_031
     4300004: Sphere_062
@@ -377,6 +385,8 @@ ModelImporter:
     4300142: Circle_003
     4300144: Circle_002
     4300146: Circle
+    4300148: Circle_001
+    4300150: Circle_000
     7400000: Default Take
     9500000: //RootNode
   materials:
