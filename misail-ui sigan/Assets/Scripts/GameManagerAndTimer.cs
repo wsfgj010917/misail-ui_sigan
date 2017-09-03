@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManagerAndTimer : MonoBehaviour {
 
@@ -91,6 +92,11 @@ public class GameManagerAndTimer : MonoBehaviour {
     
     void Update ()
     {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+
         if (!gameOver)
         {
             delay -= Time.deltaTime;
@@ -120,6 +126,11 @@ public class GameManagerAndTimer : MonoBehaviour {
         {
             inGameStuff.SetActive(false);
             gameOverStuff.SetActive(true);
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                SceneManager.LoadScene(0);
+            }
         }
 	}
 
