@@ -17,8 +17,8 @@ public class CityLife : MonoBehaviour {
 
     void Update ()
     {
-        //cityAlive.SetActive(!isDead);
-        //cityDead.SetActive(isDead);
+        cityAlive.SetActive(!isDead);
+        cityDead.SetActive(isDead);
 	}
 
     public void GotHit()
